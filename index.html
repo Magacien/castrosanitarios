@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/3e46b9e206.js" crossorigin="anonymous"></script>
+    <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+(function() {
+emailjs.init("user_v7yucUnQ6mlMNO5tgcmIf");
+})();
+</script>
     <title>Castro Sanitarios | Tucumán</title>
 </head>
 
@@ -142,29 +148,29 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <form>
+                    <form onsubmit="validar(event)">
                         <div class="form-row">
                             <div class="form-group col-sm-12 col-md-6">
-                                <input type="text" class="form-control" placeholder="Nombre" id="nombre" required class="form-control" onblur="revisar(this)" onkeyup="revisar(this)">
+                                <input type="text" class="form-control" id="nombre" placeholder="Nombre"  required class="form-control" onblur="revisar(this)" onkeyup="revisar(this)">
                                 <div class="invalid-feedback">
                                     Ingrese un Nombre
                                 </div>
                             </div>
 
                             <div class="form-group col-sm-12 col-md-6">
-                                <input type="text" class="form-control" placeholder="Apellido" required class="form-control" onblur="revisar(this)" onkeyup="revisar(this)">
+                                <input type="text" class="form-control" id="apellido" placeholder="Apellido" required class="form-control" onblur="revisar(this)" onkeyup="revisar(this)">
                                 <div class="invalid-feedback">
                                     Ingrese un Apellido
                                 </div>
                             </div>
-                            <div class="form-group col-sm12 col-md-6">
-                                <input type="email" class="form-control" id="email" placeholder="Dirección de Email" required class="form-control" onblur="revisarEmail(this)">
+                            <div class="form-group col-sm-12 col-md-6">
+                                <input type="email" class="form-control" id="mail" placeholder="Dirección de Email" required class="form-control" onblur="revisarEmail(this)">
                                 <div class="invalid-feedback">
                                     Ingrese una dirección de Email correcta
                                 </div>
                             </div>
                             <div class="form-group col-sm-12 col-md-6">
-                                <input type="text" class="form-control" placeholder="Teléfono" id="telefono" onblur="revisar(this);revisarNumeros(this)">
+                                <input type="text" class="form-control" id="telefono" placeholder="Teléfono" onblur="revisar(this);revisarNumeros(this)">
                                 <div class="invalid-feedback">
                                     Ingrese un numero de Teléfono
                                 </div>
@@ -173,7 +179,7 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col">
-                                <textarea class="form-control" placeholder="Consulta" id="consulta" onblur="revisarLongitud(this)"></textarea>
+                                <textarea class="form-control" id="consulta" placeholder="Ingrese su consulta"  onblur="revisarLongitud(this)"></textarea>
                                 <div class="invalid-feedback">
                                     Ingrese al menos 10 caracteres
                                 </div>
@@ -186,6 +192,8 @@
                             </div>
                         </div>
                     </form>
+                    <div class="alert alert-primary mt-4 d-none" id="success" role="alert">
+                    </div>
                 </div>
             </div>
         </div>
