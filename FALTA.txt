@@ -1,4 +1,4 @@
--VER DONDE SE ENVIA EL FORMULARIO (ver formulario php)
+-VER DONDE SE ENVIA EL FORMULARIO (ver formulario php , buscar datos de acceso y subirla para probar formulario)
 -VER LA PARTE MOBILE DEL SITIO
 -VER GITHUB Y SUBIRLA A LA WEB DE BOTBOL
 -FALTA FAVICON
