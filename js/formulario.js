@@ -60,36 +60,37 @@ function revisarLongitud(input) {
        revisarNumeros(document.getElementById('telefono')) &&
        revisarLongitud(document.getElementById('consulta'))
     ) {
-        enviarMail();
+
 
     }else {
        alert("envio fallido");
+       console.log("envio fallido chavonciitoo")
     }
 }
 
-function enviarMail() {
-    console.log("enviar mail");
-    let templateParams = {
-        "from_name": document.getElementById('nombre').value,
-        "to_name": "Administrador",
-        "message_html": `${document.getElementById('consulta').value}
-        - Mail: ${document.getElementById('mail').value}`
+// function enviarMail() {
+//     console.log("enviar mail");
+//     let templateParams = {
+//         "from_name": document.getElementById('nombre').value,
+//         "to_name": "Administrador",
+//         "message_html": `${document.getElementById('consulta').value}
+//         - Mail: ${document.getElementById('mail').value}`
 
-};
+// };
      
-        let service_id ="default_service";
-        let template_id = "template_uRDzHtYk";
-         emailjs.send(service_id, template_id, templateParams)
-        .then(function(response) {
-           console.log('Si todo esta bien', response);
-           document.getElementById('success').className="alert alert-primary mt-4";
-           document.getElementById('success').innerText="Consulta enviada correctamente";
-        }, 
-           function(error) {
-           console.log('Fallo el envio del mail...', error);
-           document.getElementById('success').className="alert alert-primary mt-4";
-           document.getElementById('success').innerText="Algo salio mal";
+//         let service_id ="default_service";
+//         let template_id = "template_uRDzHtYk";
+//          emailjs.send(service_id, template_id, templateParams)
+//         .then(function(response) {
+//            console.log('Si todo esta bien', response);
+//            document.getElementById('success').className="alert alert-primary mt-4";
+//            document.getElementById('success').innerText="Consulta enviada correctamente";
+//         }, 
+//            function(error) {
+//            console.log('Fallo el envio del mail...', error);
+//            document.getElementById('success').className="alert alert-primary mt-4";
+//            document.getElementById('success').innerText="Algo salio mal";
 
-        }
-        );
-}
+//         }
+//         );
+// }
