@@ -1,6 +1,6 @@
 <?php
  if(!empty($_POST['nombre']) AND !empty($_POST['apellido']) AND !empty($_POST['email']) AND !empty($_POST['telefono'])){
-$to ="gutmariano91@gmail.com";
+$to ="info@castrosanitarios.com.ar";
 $headers = "Content-Type: text/html; charset=iso-8859-1\n";
 $headers .= "From:".$_POST['nombre']."\r\n";
 $tema="Contacto desde el Sitio Web";
@@ -24,12 +24,12 @@ $mensaje="
   </tr>
  <tr>
     <td align='center' bgcolor='#FFFFCC'><strong>Consulta:</strong></td>
-    <td align='left'>$_POST[consulta]</td>
+    <td align='left'>$_POST[mensaje]</td>
   </tr>
 </table>
 ";
 @mail($to,$tema,$mensaje,$headers);
-     echo "Su mensaje ha sido enviado.<br /><a href='contacto.html'>Volver</a>";
+     echo "Su mensaje ha sido enviado.<br /><a href='index.html'>Volver</a>";
 } else {
 	echo "No se puede enviar el formulario, verifica los campos";
 }
