@@ -141,33 +141,57 @@
                     <h2 id="contacto">Contacto</h2>
                 </div>
             </div>
-            <form>
-                <div class="form-row">
-                    <div class="form-group col-sm-12 col-md-6">
-                        <input type="text" class="form-control" placeholder="Nombre" required class="form-control">
-                    </div>
-                    <div class="form-group col-sm-12 col-md-6">
-                        <input type="text" class="form-control" placeholder="Apellido" required class="form-control">
-                    </div>
-                    <div class="form-group col-sm12 col-md-6">
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Dirección de Email" required class="form-control">
-                    </div>
-                    <div class="form-group col-sm-12 col-md-6">
-                        <input type="text" class="form-control" placeholder="Empresa (Optativo)">
+            <div class="row">
+                <div class="col-sm-12">
+                    <form onsubmit="validar(event)"" action="formulario.php" method="post">
+                        <div class="form-row">
+                            <div class="form-group col-sm-12 col-md-6">
+                                <input type="text" class="form-control" id="nombre" placeholder="Nombre"  required class="form-control" onblur="revisar(this)" onkeyup="revisar(this)">
+                                <div class="invalid-feedback">
+                                    Ingrese un Nombre
+                                </div>
+                            </div>
+
+                            <div class="form-group col-sm-12 col-md-6">
+                                <input type="text" class="form-control" id="apellido" placeholder="Apellido" required class="form-control" onblur="revisar(this)" onkeyup="revisar(this)">
+                                <div class="invalid-feedback">
+                                    Ingrese un Apellido
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12 col-md-6">
+                                <input type="email" class="form-control" id="mail" placeholder="Dirección de Email" required class="form-control" onblur="revisarEmail(this)">
+                                <div class="invalid-feedback">
+                                    Ingrese una dirección de Email correcta
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12 col-md-6">
+                                <input type="text" class="form-control" id="telefono" placeholder="Teléfono" onblur="revisar(this);revisarNumeros(this)">
+                                <div class="invalid-feedback">
+                                    Ingrese un numero de Teléfono
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <textarea class="form-control" id="consulta" placeholder="Ingrese su consulta"  onblur="revisarLongitud(this)"></textarea>
+                                <div class="invalid-feedback">
+                                    Ingrese al menos 10 caracteres
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="alert alert-primary mt-4 d-none" id="success" role="alert">
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col">
-                        <textarea name="text" class="form-control form-control" id="mensaje" placeholder="Sobre que quieres hablar"></textarea>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="col">
-                        <button type="submit" class="btn-block mb-4">Enviar</button>
-                    </div>
-                </div>
-            </form>         
-           
+            </div>
+        </div>
            
             <!-- <div class="row">
               <div class="col-sm-12">
