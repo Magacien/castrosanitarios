@@ -1,36 +1,17 @@
 <?php
- if(!empty($_POST['nombre']) AND !empty($_POST['apellido']) AND !empty($_POST['email']) AND !empty($_POST['telefono'])){
-$to ="info@castrosanitarios.com.ar";
-$headers = "Content-Type: text/html; charset=iso-8859-1\n";
-$headers .= "From:".$_POST['nombre']."\r\n";
-$tema="Contacto desde el Sitio Web";
-$mensaje="
-<table border='0' cellspacing='2' cellpadding='2'>
-  <tr>
-    <td width='20%' align='center' bgcolor='#FFFFCC'><strong>Nombre:</strong></td>
-    <td width='80%' align='left'>$_POST[nombre]</td>
-  </tr>
-  <tr>
-    <td width='20%' align='center' bgcolor='#FFFFCC'><strong>Apellido:</strong></td>
-    <td width='80%' align='left'>$_POST[apellido]</td>
-  </tr>
-  <tr>
-  <td align='center' bgcolor='#FFFFCC'><strong>E-mail:</strong></td>
-  <td align='left'>$_POST[email]</td>
-</tr>
-  <tr>
-    <td width='20%' align='center' bgcolor='#FFFFCC'><strong>Teléfono</strong></td>
-    <td width='80%' align='left'>$_POST[telefono]</td>
-  </tr>
- <tr>
-    <td align='center' bgcolor='#FFFFCC'><strong>Consulta:</strong></td>
-    <td align='left'>$_POST[mensaje]</td>
-  </tr>
-</table>
-";
-@mail($to,$tema,$mensaje,$headers);
-     echo "Su mensaje ha sido enviado.<br /><a href='index.html'>Volver</a>";
-} else {
-	echo "No se puede enviar el formulario, verifica los campos";
-}
+// esto se envia al correo de botbol
+$destinatario = 'castromat.sanitarios@gmail.com';
+
+$nombre = $_POST['nombre'];
+$asunto = $_POST['asunto'];
+$mensaje = $_POST['mensaje'];
+$email = $_POST['email'];
+
+
+$header = "Enviado desde la Página Web";
+$mensajeCompleto = $mensaje . "\n Nombre: $nombre \n" ."Email: $email" ;
+
+mail($destinatario,$asunto,$mensajeCompleto,$header);
+echo "<script>alert('El mensaje se envio correctamente')</script>";
+echo "<script>setTimeout(\"location.href='index.html'\",500)</script>";
 ?>
