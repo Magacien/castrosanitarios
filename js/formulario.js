@@ -37,7 +37,7 @@ function revisarNumeros(input) {
 }
 
 function revisarLongitud(input) {
-    if (input.value !== "" && input.value.lenght >= 10) {
+    if (input.value !== "") {
         input.className = "form-control is-valid";
     } else {
         input.className = "form-control is-invalid";
